@@ -25,6 +25,7 @@ To run the project:
 1. **Clone the repository:** `git clone <repository_URL>`
 2. **Set up AWS credentials:** Configure your AWS credentials and required configurations.
 3. **Install dependencies:** Run `pip install -r requirements.txt` to install the necessary packages.
+4. **Run Streamlit server:** Use `python3 -m streamlit run main.py` to start the Streamlit server.
 
 ---
 
@@ -49,4 +50,4 @@ bedrock_client = boto3.client(
     region_name=region_name
 )
 
-
+# ... (rest of your code)
