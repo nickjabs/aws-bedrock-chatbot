@@ -1,0 +1,12 @@
+# Ignore sensitive files containing credentials
+credentials.json
+secrets.ini
+
+# Ignore system-generated files or directories
+__pycache__/
+.DS_Store
+
+
+# Ignore sensitive environment variables file
+.env
+.vscode
