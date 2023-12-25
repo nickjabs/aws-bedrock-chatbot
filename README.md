@@ -1,6 +1,6 @@
 # Project Description
 
-This project implements a chatbot using **AWS Bedrock**, utilizing the `bedrock-runtime` service for natural language processing. The chatbot leverages the **LangChain** library to interact with the Bedrock API, enabling language modeling and conversation generation.
+This project implements a chatbot using **AWS Bedrock**, leveraging the `bedrock-runtime` service for natural language processing. The chatbot is powered by the **LangChain** library, enabling interaction with the Bedrock API for language modeling and conversation generation.
 
 ![Screenshot](Screenshot%202023-12-25%20154047.png)
 
@@ -12,7 +12,7 @@ This project implements a chatbot using **AWS Bedrock**, utilizing the `bedrock-
 
 ### Code Overview
 
-The code integrates several components:
+The code comprises several components:
 
 - **LangChain Integration:** Incorporates `LLMChain` from the LangChain library to interact with the Bedrock service.
 - **Model ID:** Utilizes the "Amazon Titan Text Express" model (`amazon.titan-text-express-v1`) for chatbot functionality.
@@ -25,29 +25,7 @@ To run the project:
 1. **Clone the repository:** `git clone <repository_URL>`
 2. **Set up AWS credentials:** Configure your AWS credentials and required configurations.
 3. **Install dependencies:** Run `pip install -r requirements.txt` to install the necessary packages.
-4. **Run Streamlit server:** Use `python3 -m streamlit run main.py` to start the Streamlit server.
+4. **Run Streamlit server:** Execute `python3 -m streamlit run main.py` to start the Streamlit server.
 
 ---
 
-# Code Overview
-
-```python
-from langchain.chains import LLMChain
-from langchain.llms.bedrock import Bedrock
-from langchain.prompts import PromptTemplate
-import boto3
-import os
-from decouple import config
-import streamlit as st
-
-# Load environment variables from .env
-os.environ["AWS_PROFILE"] = config('AWS_PROFILE')
-region_name = config('AWS_REGION')  # Retrieve AWS region from .env
-
-# Bedrock client setup using the region_name variable
-bedrock_client = boto3.client(
-    service_name="bedrock-runtime",
-    region_name=region_name
-)
-
-# ... (rest of your code)
